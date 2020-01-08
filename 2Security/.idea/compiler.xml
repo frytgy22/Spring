@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="1first" />
+        <module name="2db" />
+        <module name="6 Security добавляем панель администратора и роли пользователей, ограничиваем доступ" />
+        <module name="6 Security" />
+        <module name="4 one to many" />
+        <module name="5Freemarker" />
+        <module name="3Registration" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="1first" options="-parameters" />
+      <module name="2db" options="-parameters" />
+      <module name="3Registration" options="-parameters" />
+      <module name="4 one to many" options="-parameters" />
+      <module name="5Freemarker" options="-parameters" />
+      <module name="6 Security" options="-parameters" />
+      <module name="6 Security добавляем панель администратора и роли пользователей, ограничиваем доступ" options="-parameters" />
+    </option>
+  </component>
+</project>
