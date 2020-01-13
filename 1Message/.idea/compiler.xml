@@ -7,15 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="1first" />
-        <module name="4 one to many" />
-        <module name="3Registration" />
         <module name="2db" />
+        <module name="1Message" />
+        <module name="4 one to many" />
         <module name="5Freemarker" />
+        <module name="3Registration" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="1Message" options="-parameters" />
       <module name="1first" options="-parameters" />
       <module name="2db" options="-parameters" />
       <module name="3Registration" options="-parameters" />
