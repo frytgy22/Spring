@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{title}"></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- load MUI -->
+    <link href="//cdn.muicss.com/mui-0.10.1/css/mui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <script src="//cdn.muicss.com/mui-0.10.1/js/mui.min.js"></script>
+</head>
+<body>
+
+<form class="mui-form" method="post" th:object="${dtoUser}">
+    <h2 class="mui--text-center" th:text="#{title}"></h2>
+    <div class="mui-textfield">
+        <input type="text" th:field="*{login}" autofocus id="login" maxlength="30" required>
+        <label for="login" th:text="#{login}"></label>
+        <span class="error" th:if="${#fields.hasErrors('login')}" th:errors="*{login}"></span>
+    </div>
+
+    <div class="mui-textfield">
+        <input type="password" th:field="*{password}" id="password" required maxlength="16"
+               pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$">
+        <label for="password" th:text="#{password}"></label>
+        <span class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+    </div>
+
+    <div class="mui-textfield">
+        <input type="password" th:field="*{confirmPassword}" id="confirm" required>
+        <label for="confirm" th:text="#{confirmPassword}"></label>
+        <span class="error" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"></span>
+    </div>
+
+    <div class="mui-textfield">
+        <input type="email" th:field="*{email}" id="email" required>
+        <label for="email" th:text="#{email}"></label>
+        <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+    </div>
+
+    <div class="mui-textfield">
+        <input type="text" th:field="*{phone}" id="phone" required
+               pattern="^(\+[1-9][0-9]*(\([0-9]*\)|-[0-9]*-))?[0]?[1-9][0-9\- ]*$">
+        <label for="phone" th:text="#{phone}"></label>
+        <span class="error" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
+    </div>
+
+    <div class="mui-radio">
+        <span th:text="#{gender}+': '"></span>
+        <label>
+            <input type="radio"
+                   name="optionsRadios"
+                   th:field="*{gender}" value="MALE">
+            <span th:text="#{male}"></span>
+        </label>
+        <label>
+            <input type="radio"
+                   name="optionsRadios"
+                   th:field="*{gender}" value="FEMALE">
+            <span th:text="#{female}"></span>
+        </label>
+    </div>
+    <span class="error" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span>
+
+    <div class="mui--text-center">
+        <button type="submit" class="mui-btn mui-btn--raised">Submit</button>
+    </div>
+</form>
+</body>
+</html>
